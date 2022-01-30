@@ -1,0 +1,73 @@
+
+
+<div class="container">
+
+      <br>
+      <hr>
+     
+      <form [formGroup]="saveFileForm" (ngSubmit)="onExpSubmit()">          
+          <div class="row">
+              <div class="col-md-2"><b>Choose file</b></div>
+              <div class="col-md-4">
+                      <input type='file' #logoInput (change)="onSelectFile($event.target.files)"><br>
+              </div>
+             
+          </div><br>
+          <div class="row" align="center" style="padding-left: 145px;">
+  
+              <button type="submit" class="button" class="btn btn-success" color="primary">Save Details
+                  </button>
+  
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-2"><b></b></div>
+            <div class="row" align="center" style="padding-left: 25px;">
+             
+          
+                  <a class="button" class="btn btn-danger" download="filename" target="_blank" href="/assets/NumberTest.xlsx">
+                    Download file template
+                  </a>
+          </div>
+           
+        </div>
+      </form>
+      <hr>
+   
+        <div class="row">
+          <table width="100%" class="responsive-table table-striped table-bordered table-hover">
+              <thead>
+                  <tr class="btn-primary" style="height: 40px;">
+                      <th style="width:10%;">
+                          <b>Numbers</b>
+                      </th>
+                      <th style="width:15%;">
+                          <b>Result</b>
+                      </th>
+                      <th style="width:15%;">
+                        <b>Statistics</b>
+                    </th>
+                    <th style="width:15%;">
+                      <b>Result</b>
+                      </th>
+                     
+                   
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of lstFileDetails.data">
+                    <td><span>{{item.categoryOne}}</span></td>
+                      <td><span>{{item.resultOne}}</span></td>
+                      <td><span>{{item.categoryTwo}}</span></td>
+                      <td><span>{{item.resultTwo}}</span></td>
+               
+                     
+                  </tr>
+              </tbody>
+          </table>
+          <br>
+   
+      </div>
+    
+  </div>
+
